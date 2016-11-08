@@ -1,0 +1,24 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- FAB -->
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Foto do produto -->
+    <dimen name="foto_produto_width">260dp</dimen>
+    <dimen name="foto_produto_height">110dp</dimen>
+
+    <!-- Largura/Altura da img do produto -->
+    <dimen name="img_produto_adapter_width">150dp</dimen>
+    <dimen name="img_produto_adapter_height">107dp</dimen>
+    <dimen name="img_produto_width">300dp</dimen>
+    <dimen name="img_produto_height">128dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+
+    <!-- EditarCarroFragment -->
+    <dimen name="popup_width">350dp</dimen>
+    <dimen name="popup_height">600dp</dimen>
+
+</resources>

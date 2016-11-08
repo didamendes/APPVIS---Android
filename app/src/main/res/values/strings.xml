@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">APPVIS</string>
+
+    <!-- A -->
+    <string name="action_about">Sobre</string>
+    <string name="action_settings">Settings</string>
+    <string name="about_dialog_text">
+<![CDATA[
+<b>TCC - Diogo Mendes de Souza
+<br /><br />
+Orientador - McGill Evaristo
+
+    </b><br><br /><br />
+Versao %s<br><br>
+
+	]]>
+	</string>
+    <string name="about_dialog_title"></string>
+    <string name="Atualizar">Atualizar</string>
+
+    <!-- C -->
+    <string name="produtos">Produtos</string>
+    <string name="configuracoes">Configurações</string>
+
+    <!-- D -->
+    <string name="descricao">Descrição</string>
+
+    <!-- E -->
+
+    <string name="editar">Editar</string>
+    <string name="excluir">Excluir</string>
+
+
+    <!-- M -->
+
+    <string name="msg_alerta_permissao">Para utilizar este aplicativo, você precisa aceitar as permissões.</string>
+    <string name="msg_error_conexao_indisponivel">Conexão indisponível. Verifique seu Wi-Fi ou 3G.</string>
+
+    <!-- N -->
+    <string name="nav_drawer_username">Diogo Mendes</string>
+    <string name="nav_drawer_email">didamendess@gmail.com</string>
+    <string name="nome">Nome</string>
+
+    <!-- O -->
+    <string name="ok">OK</string>
+
+    <!-- S -->
+    <string name="share">Share</string>
+    <string name="sobre">Sobre</string>
+    <string name="site_do_livro">Site do Livro</string>
+
+    <!-- V -->
+    <string name="vazio" />
+    <string name="video">Vídeo</string>
+    <string name="testar">Certo</string>
+    <string name="categoria">Categoria</string>
+
+
+    <string name="categoria_prompt">Selecione a categoria</string>
+    <string name="fornecedor">Fornecedor</string>
+    <string name="codigoBarra">Codigo de Barra</string>
+    <string name="sacForncerdor">Sac Fornedor</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="precoVenda">Preço de Venda</string>
+    <string name="alimentos">Alimentos</string>
+    <string name="bebidas">Bebidas</string>
+    <string name="carnes">Carnes</string>
+    <string name="frios">Frios</string>
+    <string name="frutas">Frutas / Verduras</string>
+    <string name="higiene">Higiene</string>
+    <string name="limpeza">Limpeza</string>
+    <string name="padaria">Padaria</string>
+    <string name="outros">Outros</string>
+
+    <string-array name="categoria_arrays">
+        <item>Alimentos</item>
+        <item>Bebidas</item>
+        <item>Carnes</item>
+        <item>Frios</item>
+        <item>Frutas / Verduras</item>
+        <item>Higiene</item>
+        <item>Limpeza</item>
+        <item>Padaria</item>
+        <item>Outros</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="urlFoto">FOTO (URL)</string>
+
+
+    <string name="scan_barcode_button">Scanear codigo de barra</string>
+    <string name="no_barcode_captured">barcode nao capturado</string>
+    <string name="barcode_error_format">"Error leitura barcode: %1$s"</string>
+
+    <!-- Strings related to barcode scanner
+    <string name="ok">OK</string> -->
+    <string name="permission_camera_rationale">Acesso à câmera é necessária para a detecção</string>
+    <string name="no_camera_permission">Este aplicativo não pode ser executado porque ele não tem a permissão câmera. A aplicação será agora sair.</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="login">Login</string>
+    <string name="nomeProdutos">Nome</string>
+
+</resources>

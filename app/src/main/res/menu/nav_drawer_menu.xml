@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_item_produtos_todos"
+            android:icon="@drawable/ic_drawer_produto"
+            android:title="@string/produtos" android:checked="true" />
+
+        <item android:id="@+id/nav_item_produtos_alimentos"
+            android:icon="@drawable/ic_drawer_produto"
+            android:title="@string/alimentos" android:checked="true" />
+
+        <item android:id="@+id/nav_item_produtos_bebidas"
+            android:icon="@drawable/ic_drawer_produto"
+            android:title="@string/bebidas" android:checked="true" />
+
+        <item android:id="@+id/nav_item_produtos_carnes"
+            android:icon="@drawable/ic_drawer_produto"
+            android:title="@string/carnes" android:checked="true" />
+
+        <item android:id="@+id/nav_item_produtos_frios"
+            android:icon="@drawable/ic_drawer_produto"
+            android:title="@string/frios" android:checked="true" />
+
+        <item android:id="@+id/nav_item_produtos_frutas"
+            android:icon="@drawable/ic_drawer_produto"
+            android:title="@string/frutas" android:checked="true" />
+
+        <item android:id="@+id/nav_item_produtos_higiene"
+            android:icon="@drawable/ic_drawer_produto"
+            android:title="@string/higiene" android:checked="true" />
+
+        <item android:id="@+id/nav_item_produtos_limpeza"
+            android:icon="@drawable/ic_drawer_produto"
+            android:title="@string/limpeza" android:checked="true" />
+
+        <item android:id="@+id/nav_item_produtos_padaria"
+            android:icon="@drawable/ic_drawer_produto"
+            android:title="@string/padaria" android:checked="true" />
+
+        <item android:id="@+id/nav_item_produtos_outros"
+            android:icon="@drawable/ic_drawer_produto"
+            android:title="@string/outros" android:checked="true" />
+
+    </group>
+
+</menu>

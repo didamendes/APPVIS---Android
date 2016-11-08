@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.appvis.appvis">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".ProdutosApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar.NavDrawer">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.MainActivityProduto" />
+
+        <activity
+            android:name=".activity.InsereDado"
+            android:parentActivityName=".activity.MainActivityProduto">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivityProduto" />
+        </activity>
+
+        <activity
+            android:name=".activity.ProdutoActivity"
+            android:parentActivityName=".activity.MainActivityProduto">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivityProduto" />
+        </activity>
+        <!--
+        <activity android:name=".fragments.ProdutosTabFragment" />
+        <activity android:name=".activity.ProdutoActivity"></activity>
+        -->
+        <activity android:name=".barcode.BarcodeCaptureActivity" />
+
+        <activity
+            android:name=".activity.ProdutosActivity"
+            android:parentActivityName=".activity.MainActivityProduto">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivityProduto" />
+        </activity>
+
+        <activity android:name=".activity.ResultadoProduto"
+            android:parentActivityName=".activity.MainActivityProduto">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivityProduto" />
+        </activity>
+
+    </application>
+
+</manifest>
