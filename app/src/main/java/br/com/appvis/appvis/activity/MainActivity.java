@@ -88,6 +88,17 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
             tts.speak("Se ao ler o codigo de barra voltar para uma mensagem de bem vindo do APPVIS o produto não foi encontrado, se " +
                     " o nome do produto for lido o codigo foi encontrado com sucesso ! ", TextToSpeech.QUEUE_ADD, null);
 
+
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        // Don't forget to shutdown tts!
+        if (tts != null) {
+            tts.stop();
+            tts.shutdown();
+        }
+        super.onDestroy();
     }
 }

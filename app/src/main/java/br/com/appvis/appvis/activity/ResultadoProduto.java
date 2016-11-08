@@ -33,7 +33,7 @@ public class ResultadoProduto extends AppCompatActivity implements TextToSpeech.
 
     private String codigo;
     private Produto produto;
-    private TextToSpeech tts;
+    private TextToSpeech ttsResultado;
     String nomeProdudo;
     String descProduto;
     String precoProduto;
@@ -52,7 +52,7 @@ public class ResultadoProduto extends AppCompatActivity implements TextToSpeech.
 
         codigo = this.getIntent().getStringExtra("codigo");
 
-        tts = new TextToSpeech(this, this);
+        ttsResultado = new TextToSpeech(this, this);
 
 
             List<Produto> listProduto = db.findAllByCodigoBarra(codigo);
@@ -65,7 +65,7 @@ public class ResultadoProduto extends AppCompatActivity implements TextToSpeech.
                 TextView tNomeProduto = (TextView) findViewById(R.id.tNomeProduto);
                 tNomeProduto.setText(listProduto.get(0).nome);
 
-                tts.speak(String.valueOf(tNomeProduto), TextToSpeech.QUEUE_FLUSH, null);
+                ttsResultado.speak(String.valueOf(tNomeProduto), TextToSpeech.QUEUE_FLUSH, null);
                 TextView tDesc = (TextView) findViewById(R.id.tDesc);
                 nomeProdudo = tNomeProduto.getText().toString();
                 tDesc.setText(listProduto.get(0).descricao);
@@ -84,15 +84,25 @@ public class ResultadoProduto extends AppCompatActivity implements TextToSpeech.
     public void onInit(int status) {
         if(status == TextToSpeech.SUCCESS) {
             Locale locale = new Locale("pt", "BR");
-            tts.setLanguage(locale);
-            tts.speak("Nome do Produto ", TextToSpeech.QUEUE_FLUSH, null);
-            tts.speak(nomeProdudo, TextToSpeech.QUEUE_ADD, null);
-            tts.speak("Descrição do Produto ", TextToSpeech.QUEUE_ADD, null);
-            tts.speak(descProduto, TextToSpeech.QUEUE_ADD, null);
-            tts.speak("Preço de venda do Produto", TextToSpeech.QUEUE_ADD, null);
-            tts.speak(precoProduto, TextToSpeech.QUEUE_ADD, null);
-            tts.speak("Forncedor do Produto ", TextToSpeech.QUEUE_ADD, null);
-            tts.speak(codigoProduto, TextToSpeech.QUEUE_ADD, null);
+            ttsResultado.setLanguage(locale);
+            ttsResultado.speak("Nome do Produto ", TextToSpeech.QUEUE_FLUSH, null);
+            ttsResultado.speak(nomeProdudo, TextToSpeech.QUEUE_ADD, null);
+            ttsResultado.speak("Descrição do Produto ", TextToSpeech.QUEUE_ADD, null);
+            ttsResultado.speak(descProduto, TextToSpeech.QUEUE_ADD, null);
+            ttsResultado.speak("Preço de venda do Produto", TextToSpeech.QUEUE_ADD, null);
+            ttsResultado.speak(precoProduto, TextToSpeech.QUEUE_ADD, null);
+            ttsResultado.speak("Forncedor do Produto ", TextToSpeech.QUEUE_ADD, null);
+            ttsResultado.speak(codigoProduto, TextToSpeech.QUEUE_ADD, null);
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        // Don't forget to shutdown tts!
+        if (ttsResultado != null) {
+            ttsResultado.stop();
+            ttsResultado.shutdown();
+        }
+        super.onDestroy();
     }
 }

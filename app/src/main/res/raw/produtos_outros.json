@@ -1,29 +1,13 @@
 {
   "produtos": {
     "produto": [
-      {
-        "nome": "NESTLÉ CLASSIC ao Leite",
-        "desc": "Um clássico da Nestlé com uma fórmula mais cremosa para você se deliciar e compartilhar com os amigos e com a família.",
-        "codigoBarra": "5050",
-        "precoVenda": "5",
-        "fornecedor": "NESTLÉ",
-        "url_foto": "https://www.nestle.com.br/site/images/marcas_produtos/prod_150x180/491.png"
-      },
 	  {
-        "nome": "Classic Biscoito Mini torta",
-        "desc": "Biscoito Mini torta",
-        "codigoBarra": "6060",
-        "precoVenda": "3",
-        "fornecedor": "NESTLÉ",
-        "url_foto": "https://www.nestle.com.br/site/images/marcas_produtos/prod_150x180/classic_b.png"
-      },
-	  {
-        "nome": "Classic Biscoito Recheado",
-        "desc": "Biscoito recheado",
-        "codigoBarra": "7070",
-        "precoVenda": "2",
-        "fornecedor": "NESTLÉ",
-        "url_foto": "https://www.nestle.com.br/site/images/marcas_produtos/prod_150x180/classic_biscoito_recheado.png"
+        "nome": "Web Service RESTful",
+        "desc": "Aprenda a criar web service RESTful em Java na nuvem da Google",
+        "codigoBarra": "9788575224540",
+        "precoVenda": "80",
+        "fornecedor": "Novatec",
+        "url_foto": "http://d3vdsoeghm4gc3.cloudfront.net/Custom/Content/Products/55/03/550335_web-services-restful-aprenda-a-criar-web-services-restful-em-java-na-nuvem-do-google-705086_m1_635793059961936000.jpg"
       }
       
     ]
