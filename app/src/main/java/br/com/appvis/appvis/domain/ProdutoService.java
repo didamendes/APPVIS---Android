@@ -22,21 +22,61 @@ import livroandroid.lib.utils.FileUtils;
 import livroandroid.lib.utils.HttpHelper;
 import livroandroid.lib.utils.XMLUtils;
 
+import static br.com.appvis.appvis.R.string.produtos;
+import static com.google.android.gms.analytics.internal.zzy.n;
+import static com.google.android.gms.analytics.internal.zzy.p;
+import static com.google.android.gms.analytics.internal.zzy.t;
+
 /**
  * Created by Diogo on 07/09/2016.
  */
 public class ProdutoService {
 
+    private static int categoriaProduto;
     private static final boolean LOG_ON = false;
     private static final String TAG = "ProdutoService";
-    private static final String URL = "";
+    private static final String URL = "http://env-9266141.jelasticlw.com.br/Produtos/rest/produtos";
 
-    public static List<Produto> getProdutos(Context context, int categoria) throws IOException{
-        List<Produto> produtos = getProdutosFromBanco(context, categoria);
+    public static List<Produto> getProdutos(Context context, String categoria) throws IOException{
+        List<Produto> produtos = getProdutosFromWebSercice(context, categoria);
+        /*List<Produto> produtos = getProdutosFromBanco(context, categoria);
         if(produtos != null && produtos.size() > 0){
             return produtos;
         }
         produtos = getProdutosFromWebSercice(context, categoria);
+        */
+        return produtos;
+    }
+
+    public static List<Produto> getProdutosFromWebSercice(Context context, String categoria) throws IOException {
+        String url = categoria != null ? URL + "/categoria/" + categoria : URL;
+        HttpHelper http = new HttpHelper();
+        http.LOG_ON = true;
+        String json = http.doGet(url);
+        List<Produto> produtos = parserJSON(context, json);
+
+        if (categoria == "alimentos"){
+            categoriaProduto = 2131165291;
+        } else if (categoria == "bebidas"){
+            categoriaProduto = 2131165295;
+        } else if (categoria == "carnes"){
+            categoriaProduto = 2131165298;
+        } else if (categoria == "frios"){
+            categoriaProduto = 2131165314;
+        } else if (categoria == "higiene"){
+            categoriaProduto = 2131165317;
+        } else if (categoria == "limpeza"){
+            categoriaProduto = 2131165318;
+        } else if (categoria == "padaria"){
+            categoriaProduto = 2131165333;
+        } else if (categoria == "outros"){
+            categoriaProduto = 2131165332;
+        } else if (categoria == "frutas"){
+            categoriaProduto = 2131165315;
+        }
+
+
+        salvarProdutos(context, categoriaProduto, produtos);
         return produtos;
     }
 
@@ -55,15 +95,7 @@ public class ProdutoService {
     }
 
 
-    public static List<Produto> getProdutosFromWebSercice(Context context, int categoria) throws IOException {
 
-        String json = readFile(context, categoria);
-        List<Produto> produtos = parserJSON(context, json);
-        // Depois de buscar, salva os produtos
-        salvarProdutos(context, categoria, produtos);
-        return produtos;
-
-    }
 
     // Salva os produtos no banco de dados
     private static void salvarProdutos(Context context, int categoria, List<Produto> produtos){
@@ -135,9 +167,9 @@ public class ProdutoService {
 
         List<Produto> produtos = new ArrayList<Produto>();
         try{
-            JSONObject root = new JSONObject(json);
-            JSONObject obj = root.getJSONObject("produtos");
-            JSONArray jsonProdutos = obj.getJSONArray("produto");
+
+
+            JSONArray jsonProdutos = new JSONArray(json);
 
             //Insere cada produto na lista
             for (int i = 0; i < jsonProdutos.length(); i++){
@@ -146,11 +178,11 @@ public class ProdutoService {
 
                 //Le as informações do Produto
                 p.nome = jsonProduto.optString("nome");
-                p.descricao = jsonProduto.optString("desc");
+                p.descricao = jsonProduto.optString("descricao");
                 p.codigoBarra = jsonProduto.optLong("codigoBarra");
                 p.precoVenda = jsonProduto.optString("precoVenda");
                 p.fornecedor = jsonProduto.optString("fornecedor");
-                p.urlProduto = jsonProduto.optString("url_foto");
+                //p.urlProduto = jsonProduto.optString("url_foto");
 
                 if (LOG_ON){
                     Log.d(TAG, "Produto " + p.nome + " > " + p.urlProduto);

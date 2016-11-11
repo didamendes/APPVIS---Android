@@ -1,6 +1,7 @@
 package br.com.appvis.appvis.fragments;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -25,10 +26,13 @@ import br.com.appvis.appvis.adapter.ProdutoAdapter;
 import br.com.appvis.appvis.domain.Produto;
 import br.com.appvis.appvis.domain.ProdutoService;
 
+import static com.google.android.gms.analytics.internal.zzy.e;
+
 
 public class ProdutosFragment extends Fragment {
 
     private int categoria;
+    private String categoriaProduto;
     protected RecyclerView recyclerView;
     private List<Produto> produtos;
 
@@ -66,14 +70,59 @@ public class ProdutosFragment extends Fragment {
         taskCarros();
     }
 
-    private void taskCarros(){
-        try {
-            //Busca os produtos pelo tipo
-            this.produtos = ProdutoService.getProdutos(getContext(), categoria);
-            //Atualiza a lista
-            recyclerView.setAdapter(new ProdutoAdapter(getContext(), produtos, onClickProduto()));
-        } catch (IOException e) {
-            Log.e("livro", e.getMessage(), e);
+    private void taskCarros() {
+
+        new GetProdutosTask().execute();
+
+    }
+
+    private class GetProdutosTask extends AsyncTask<Void, Void, List<Produto>>{
+
+
+
+        @Override
+        protected List<Produto> doInBackground(Void... params) {
+            try{
+                if (categoria == R.string.alimentos){
+                    categoriaProduto = "alimentos";
+                }
+                if (categoria == R.string.bebidas){
+                    categoriaProduto = "bebidas";
+                }
+                if (categoria == R.string.carnes){
+                    categoriaProduto = "carnes";
+                }
+                if (categoria == R.string.frios){
+                    categoriaProduto = "frios";
+                }
+                if (categoria == R.string.frutas){
+                    categoriaProduto = "frutas";
+                }
+                if (categoria == R.string.higiene){
+                    categoriaProduto = "higiene";
+                }
+                if (categoria == R.string.limpeza){
+                    categoriaProduto = "limpeza";
+                }
+                if (categoria == R.string.padaria){
+                    categoriaProduto = "padaria";
+                }
+                if (categoria == R.string.outros){
+                    categoriaProduto = "outros";
+                }
+                return ProdutoService.getProdutos(getContext(), categoriaProduto);
+            }catch (IOException e){
+                Log.e("tcc", e.getMessage(), e);
+                return null;
+            }
+        }
+
+        protected void onPostExecute(List<Produto> produtos){
+            if(produtos != null){
+                ProdutosFragment.this.produtos = produtos;
+
+                recyclerView.setAdapter(new ProdutoAdapter(getContext(), produtos, onClickProduto()));
+            }
         }
     }
 

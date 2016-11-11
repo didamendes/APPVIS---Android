@@ -18,7 +18,7 @@ public class ProdutoDB extends SQLiteOpenHelper {
     private static final String TAG = "sql";
 
     public static final String NOME_BANCO = "appvis";
-    private static final int VERSAO_BANCO = 6;
+    private static final int VERSAO_BANCO = 7;
 
     public ProdutoDB(Context context){
         super(context, NOME_BANCO, null, VERSAO_BANCO);
@@ -29,7 +29,7 @@ public class ProdutoDB extends SQLiteOpenHelper {
         Log.d(TAG, "Criando a tabela produto");
         db.execSQL("create table if not exists produto (_id integer primary key autoincrement," +
                 " nome text not null, categoria text not null, codigoBarra long not null, descricao text not null, precoVenda text not null," +
-                " fornecedor text not null, urlProduto text not null);");
+                " fornecedor text not null, urlProduto text );");
         Log.d(TAG, "Tabela produto criada com sucesso");
     }
 
