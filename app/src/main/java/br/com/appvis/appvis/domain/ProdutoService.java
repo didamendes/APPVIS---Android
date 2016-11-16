@@ -23,9 +23,9 @@ import livroandroid.lib.utils.HttpHelper;
 import livroandroid.lib.utils.XMLUtils;
 
 import static br.com.appvis.appvis.R.string.produtos;
-import static com.google.android.gms.analytics.internal.zzy.n;
-import static com.google.android.gms.analytics.internal.zzy.p;
-import static com.google.android.gms.analytics.internal.zzy.t;
+//import static com.google.android.gms.analytics.internal.zzy.n;
+//import static com.google.android.gms.analytics.internal.zzy.p;
+//import static com.google.android.gms.analytics.internal.zzy.t;
 
 /**
  * Created by Diogo on 07/09/2016.

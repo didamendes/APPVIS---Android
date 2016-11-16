@@ -7,11 +7,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".ProdutosApplication"
+        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+
         android:theme="@style/AppTheme.NoActionBar.NavDrawer">
         <activity android:name=".activity.MainActivity">
             <intent-filter>
@@ -57,6 +58,8 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.MainActivityProduto" />
         </activity>
+
+
 
     </application>
 

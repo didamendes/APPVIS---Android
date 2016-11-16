@@ -26,8 +26,8 @@ import static br.com.appvis.appvis.R.id.tNome;
 import static br.com.appvis.appvis.R.id.tNomeProduto;
 import static br.com.appvis.appvis.R.id.tpreVen;
 import static br.com.appvis.appvis.R.string.produtos;
-import static com.google.android.gms.analytics.internal.zzy.i;
-import static com.google.android.gms.analytics.internal.zzy.t;
+//import static com.google.android.gms.analytics.internal.zzy.i;
+//import static com.google.android.gms.analytics.internal.zzy.t;
 
 public class ResultadoProduto extends AppCompatActivity implements TextToSpeech.OnInitListener {
 

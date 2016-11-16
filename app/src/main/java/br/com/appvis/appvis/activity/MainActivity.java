@@ -22,8 +22,8 @@ import br.com.appvis.appvis.domain.ProdutoDB;
 
 import static android.R.attr.data;
 import static br.com.appvis.appvis.R.id.tNome;
-import static com.google.android.gms.analytics.internal.zzy.s;
-import static com.google.android.gms.analytics.internal.zzy.v;
+//import static com.google.android.gms.analytics.internal.zzy.s;
+//import static com.google.android.gms.analytics.internal.zzy.v;
 
 public class MainActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();

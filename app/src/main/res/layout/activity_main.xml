@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:background="@color/cast_intro_overlay_button_background_color"
+        android:background="@color/primary"
         android:textColor="@color/cardview_dark_background"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />

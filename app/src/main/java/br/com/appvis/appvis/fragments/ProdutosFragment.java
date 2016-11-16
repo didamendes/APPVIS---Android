@@ -26,7 +26,7 @@ import br.com.appvis.appvis.adapter.ProdutoAdapter;
 import br.com.appvis.appvis.domain.Produto;
 import br.com.appvis.appvis.domain.ProdutoService;
 
-import static com.google.android.gms.analytics.internal.zzy.e;
+//import static com.google.android.gms.analytics.internal.zzy.e;
 
 
 public class ProdutosFragment extends Fragment {
